@@ -24,7 +24,7 @@ export default function showbox({info}){
         </Typography>
         <Typography variant="h6" sx={{ color: 'text.secondary' }} component={"span"}>
           
-          {info && info.lat?`latitude : ${info.name}`:"latitude : 0"}
+          {info && info.lat?`latitude : ${info.lat}`:"latitude : 0"}
           <br />
           {info&&info.lon?`longitude : ${info.lon}`:"longitude : 0"}
           <br />
