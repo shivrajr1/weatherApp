@@ -6,7 +6,7 @@ import './searchbox.css'
 
 export default function searchbox({detail}){
   const [city, setCity] = useState('');
-  
+  const weather_api='f5c1258f609da7b15987b0929b9fc347';
   
     // const [dtl, setDtl] = useState({});
     const [err, setErr] = useState('');
