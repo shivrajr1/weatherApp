@@ -5,7 +5,7 @@ import axios from 'axios'
 import './searchbox.css'
 
 export default function searchbox({detail}){
-  require('dotenv').config();
+  // require('dotenv').config();
   const [city, setCity] = useState('');
   
     // const [dtl, setDtl] = useState({});
