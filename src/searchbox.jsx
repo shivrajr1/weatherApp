@@ -5,8 +5,8 @@ import axios from 'axios'
 import './searchbox.css'
 
 export default function searchbox({detail}){
+  require('dotenv').config();
   const [city, setCity] = useState('');
-  const weather_api='f5c1258f609da7b15987b0929b9fc347';
   
     // const [dtl, setDtl] = useState({});
     const [err, setErr] = useState('');
@@ -16,7 +16,7 @@ export default function searchbox({detail}){
       
       if(city){
       
-      await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${weather_api}&units=metric`)
+      await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${process.env.weather_api}&units=metric`)
       .then((res)=>{
         detail(res);
         // console.log(res);
