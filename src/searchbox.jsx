@@ -3,30 +3,24 @@ import { useState } from 'react'
 import { Button, TextField } from '@mui/material';
 import axios from 'axios'
 import './searchbox.css'
+import '@fontsource/roboto/500.css';
 
 export default function searchbox({detail}){
+  
   const [city, setCity] = useState('');
-  
-  
     // const [dtl, setDtl] = useState({});
     const [err, setErr] = useState('');
     const [validationError, setValidationError] = useState(false);
-    // console.log(city);
     async function weather() {
-      
+      const api = `${import.meta.env.VITE_API_WEATHER}`;
       if(city){
-      
       await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${api}&units=metric`)
       .then((res)=>{
         detail(res);
-        // console.log(res);
       })
         
-        // console.log(info);
       .catch((err)=>{
-        //  console.log(err);
-         setErr(err.response.data.message);
-          
+         setErr('city not found');
         })
         setCity('');
       }else{
@@ -35,10 +29,7 @@ export default function searchbox({detail}){
       
     }
   return (
-
     <>
-    
-    
       <div className="search">
         <TextField
         required
@@ -63,12 +54,6 @@ export default function searchbox({detail}){
           }}
           
          />
-         {/* <TextField
-          required
-          id="outlined-required"
-          label="Required"
-          defaultValue="Hello World"
-        /> */}
         <Button 
         variant="contained" 
         onClick={weather} 

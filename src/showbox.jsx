@@ -4,12 +4,13 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import './showbox.css'
+import '@fontsource/roboto/500.css';
 
 export default function showbox({info}){
-    const rany="../src/imgs/rany.jpg"
-    const summer='./src/imgs/summer.jpg';
-    const winter='./src/imgs/winter.jpg';
-    const dusty='./src/imgs/dusty.jpg';
+  const rany="https://static.vecteezy.com/system/resources/thumbnails/026/788/692/small/clouds-with-rain-rainy-day-on-blue-background-free-video.jpg"
+  const summer='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQKmIiRfJPRcmEQd9j7RQsyUZ-W-oEXhGgBg&s';
+  const winter='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQchm5Suuc-xzL_x48SKeggzthqBKb3XGTbRg&s';
+
   return (
     <div className="show">
       <Card sx={{ maxWidth: 345 }}>
