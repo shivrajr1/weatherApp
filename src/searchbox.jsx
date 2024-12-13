@@ -6,15 +6,18 @@ import './searchbox.css'
 import '@fontsource/roboto/500.css';
 
 export default function searchbox({detail}){
-  
+
   const [city, setCity] = useState('');
+
     // const [dtl, setDtl] = useState({});
     const [err, setErr] = useState('');
     const [validationError, setValidationError] = useState(false);
     async function weather() {
       const api = `${import.meta.env.VITE_API_WEATHER}`;
       if(city){
+
       await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${api}&units=metric`)
+
       .then((res)=>{
         detail(res);
       })
