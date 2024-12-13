@@ -13,7 +13,7 @@ export default function searchbox({detail}){
     const [err, setErr] = useState('');
     const [validationError, setValidationError] = useState(false);
     async function weather() {
-      const api = `${import.meta.env.VITE_API_WEATHER}`;
+      const api = import.meta.env.VITE_API_WEATHER;
       if(city){
 
       await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${api}&units=metric`)
